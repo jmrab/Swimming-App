@@ -7,18 +7,26 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct GreetingScreen: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        ZStack {
+            Image("1234")
+                .scaleEffect(CGSize(width: 0.8, height: 0.9))
+            Rectangle()
+                .fill(Color.gray)
+                .frame(width: 330, height: 90)
+                .opacity(0.7)
+
+            Text("Swim Tracker")
+                .font(.system(size: 48))
+                .foregroundColor(.white)
+            
+            
         }
         .padding()
     }
 }
 
 #Preview {
-    ContentView()
+    GreetingScreen()
 }
