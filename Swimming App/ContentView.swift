@@ -51,13 +51,51 @@ struct SplashView: View {
     }
     
 }
-        struct MainMenu: View {
-            var body: some View {
-                Text("bing chilling")
+
+struct MainMenu: View {
+    var body: some View {
+            List {
+                NavigationLink(destination: NewTimeView()) {
+                    Text("Enter New Time")
+                }
+                NavigationLink(destination: NewTimeView()) {
+                    Text("View All Times")
+                }
+                NavigationLink(destination: NewTimeView()) {
+                    Text("Comparisons")
+                }
+                NavigationLink(destination: NewTimeView()) {
+                    Text("Time Standards")
+                }
+               
             }
         }
-        
-        
+}
+
+struct NewTimeView: View {
+    var body: some View {
+        Text("enter new time")
+    }
+}
+
+struct AllTimesView: View {
+    var body: some View {
+        Text("view all times")
+    }
+}
+
+struct CompareView: View {
+    var body: some View {
+        Text("compare table or graph")
+    }
+}
+
+struct TimeStandardsView: View {
+    var body: some View {
+        Text("time standards")
+    }
+}
+
 struct SplashScreen_Previews: PreviewProvider {
     static var previews: some View {
         SplashView()
