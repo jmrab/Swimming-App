@@ -14,6 +14,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1064DF612BC02FA9001CDF1F /* sources.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = sources.rtf; sourceTree = "<group>"; };
 		10B94A042BAB202400599934 /* Swimming App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Swimming App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		10B94A072BAB202400599934 /* Swimming_AppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Swimming_AppApp.swift; sourceTree = "<group>"; };
 		10B94A092BAB202400599934 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -55,6 +56,7 @@
 				10B94A092BAB202400599934 /* ContentView.swift */,
 				10B94A0B2BAB202500599934 /* Assets.xcassets */,
 				10B94A0D2BAB202500599934 /* Preview Content */,
+				1064DF612BC02FA9001CDF1F /* sources.rtf */,
 			);
 			path = "Swimming App";
 			sourceTree = "<group>";
@@ -126,6 +128,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				10B94A0F2BAB202500599934 /* Preview Assets.xcassets in Resources */,
+				1064DF622BC02FA9001CDF1F /* sources.rtf in Resources */,
 				10B94A0C2BAB202500599934 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
