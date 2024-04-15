@@ -54,27 +54,70 @@ struct SplashView: View {
 
 struct MainMenu: View {
     var body: some View {
+        NavigationView {
             List {
                 NavigationLink(destination: NewTimeView()) {
                     Text("Enter New Time")
                 }
-                NavigationLink(destination: NewTimeView()) {
+                NavigationLink(destination: AllTimesView()) {
                     Text("View All Times")
                 }
-                NavigationLink(destination: NewTimeView()) {
+                NavigationLink(destination: CompareView()) {
                     Text("Comparisons")
                 }
-                NavigationLink(destination: NewTimeView()) {
+                NavigationLink(destination: TimeStandardsView()) {
                     Text("Time Standards")
                 }
-               
+                
             }
+            .navigationTitle("Main Menu")
         }
+    }
 }
 
 struct NewTimeView: View {
+    
+    @State private var date = Date()
+    @State private var time: String = ""
+    @State private var event = ""
+    @State private var course = ""
+    let events = ["400/500 Free", "800/1000 Free", "1500/1650 Free",
+                  "50 Back", "100 Back", "200 Back",
+                  "50 Breast", "100 Breast", "200 Breast",
+                  "50 Fly", "100 Fly", "200 Fly",
+                  "200 IM", "400 IM"]
+    let courses = ["Short Course Yards", "Long Course Meters", "Short Course Meters"]
+    
     var body: some View {
-        Text("enter new time")
+        
+        Text("Emter New Time")
+        
+        DatePicker(
+            "Date",
+            selection: $date,
+            displayedComponents: [.date]
+        )
+        
+        TextField("Enter Time", text: $time)
+            .textFieldStyle(RoundedBorderTextFieldStyle())
+            .padding()
+        
+        Picker("Select an event", selection: $event) {
+            ForEach(events, id: \.self) { eventName in
+                Text(eventName)
+            }
+        }
+        .pickerStyle(.menu)
+        
+        Picker("Select an event", selection: $course) {
+            ForEach(courses, id: \.self) { courseName in
+                Text(courseName)
+            }
+        }
+        .pickerStyle(.menu)
+        
+        
+        
     }
 }
 
@@ -93,6 +136,7 @@ struct CompareView: View {
 struct TimeStandardsView: View {
     var body: some View {
         Text("time standards")
+        Link("Learn SwiftUI", destination: URL(string: "https://www.hackingwithswift.com/quick-start/swiftui")!)
     }
 }
 
