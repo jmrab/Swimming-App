@@ -11,6 +11,14 @@
 		10B94A0A2BAB202400599934 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B94A092BAB202400599934 /* ContentView.swift */; };
 		10B94A0C2BAB202500599934 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 10B94A0B2BAB202500599934 /* Assets.xcassets */; };
 		10B94A0F2BAB202500599934 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 10B94A0E2BAB202500599934 /* Preview Assets.xcassets */; };
+		10EAD5A82BDC00AB002C68FD /* NewTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10EAD5A72BDC00AB002C68FD /* NewTimeView.swift */; };
+		10EAD5AA2BDC00CE002C68FD /* RaceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10EAD5A92BDC00CE002C68FD /* RaceManager.swift */; };
+		10EAD5AC2BDC00E3002C68FD /* RaceData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10EAD5AB2BDC00E3002C68FD /* RaceData.swift */; };
+		10EAD5AE2BDC010A002C68FD /* MainMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10EAD5AD2BDC010A002C68FD /* MainMenu.swift */; };
+		10EAD5B02BDC011C002C68FD /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10EAD5AF2BDC011C002C68FD /* SplashView.swift */; };
+		10EAD5B22BDC0126002C68FD /* TimeStandardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10EAD5B12BDC0126002C68FD /* TimeStandardsView.swift */; };
+		10EAD5B42BDC0130002C68FD /* CompareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10EAD5B32BDC0130002C68FD /* CompareView.swift */; };
+		10EAD5B62BDC0147002C68FD /* AllTimesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10EAD5B52BDC0147002C68FD /* AllTimesView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +28,14 @@
 		10B94A092BAB202400599934 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		10B94A0B2BAB202500599934 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		10B94A0E2BAB202500599934 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		10EAD5A72BDC00AB002C68FD /* NewTimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTimeView.swift; sourceTree = "<group>"; };
+		10EAD5A92BDC00CE002C68FD /* RaceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceManager.swift; sourceTree = "<group>"; };
+		10EAD5AB2BDC00E3002C68FD /* RaceData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceData.swift; sourceTree = "<group>"; };
+		10EAD5AD2BDC010A002C68FD /* MainMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenu.swift; sourceTree = "<group>"; };
+		10EAD5AF2BDC011C002C68FD /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
+		10EAD5B12BDC0126002C68FD /* TimeStandardsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeStandardsView.swift; sourceTree = "<group>"; };
+		10EAD5B32BDC0130002C68FD /* CompareView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompareView.swift; sourceTree = "<group>"; };
+		10EAD5B52BDC0147002C68FD /* AllTimesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllTimesView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +70,14 @@
 			children = (
 				10B94A072BAB202400599934 /* Swimming_AppApp.swift */,
 				10B94A092BAB202400599934 /* ContentView.swift */,
+				10EAD5B52BDC0147002C68FD /* AllTimesView.swift */,
+				10EAD5B32BDC0130002C68FD /* CompareView.swift */,
+				10EAD5B12BDC0126002C68FD /* TimeStandardsView.swift */,
+				10EAD5AF2BDC011C002C68FD /* SplashView.swift */,
+				10EAD5AD2BDC010A002C68FD /* MainMenu.swift */,
+				10EAD5AB2BDC00E3002C68FD /* RaceData.swift */,
+				10EAD5A92BDC00CE002C68FD /* RaceManager.swift */,
+				10EAD5A72BDC00AB002C68FD /* NewTimeView.swift */,
 				10B94A0B2BAB202500599934 /* Assets.xcassets */,
 				10B94A0D2BAB202500599934 /* Preview Content */,
 				1064DF612BC02FA9001CDF1F /* sources.rtf */,
@@ -128,7 +152,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				10B94A0F2BAB202500599934 /* Preview Assets.xcassets in Resources */,
-				1064DF622BC02FA9001CDF1F /* sources.rtf in Resources */,
 				10B94A0C2BAB202500599934 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -140,8 +163,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				10EAD5B22BDC0126002C68FD /* TimeStandardsView.swift in Sources */,
+				10EAD5B62BDC0147002C68FD /* AllTimesView.swift in Sources */,
 				10B94A0A2BAB202400599934 /* ContentView.swift in Sources */,
+				10EAD5AE2BDC010A002C68FD /* MainMenu.swift in Sources */,
 				10B94A082BAB202400599934 /* Swimming_AppApp.swift in Sources */,
+				10EAD5AC2BDC00E3002C68FD /* RaceData.swift in Sources */,
+				10EAD5AA2BDC00CE002C68FD /* RaceManager.swift in Sources */,
+				10EAD5A82BDC00AB002C68FD /* NewTimeView.swift in Sources */,
+				10EAD5B02BDC011C002C68FD /* SplashView.swift in Sources */,
+				10EAD5B42BDC0130002C68FD /* CompareView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
