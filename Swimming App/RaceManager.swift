@@ -1,19 +1,34 @@
 import SwiftUI
+import Foundation
 
 class RaceManager: ObservableObject {
-    @AppStorage("races") var racesData: Data?
-    
     @Published var races: [RaceData] = []
     
     init() {
-        if racesData == nil {
-            racesData = Data()
-        }
-       
-        self.races = (try? JSONDecoder().decode([RaceData].self, from: racesData!)) ?? []
+        self.loadRaces()
     }
     
     func addRace(race: RaceData) {
         races.append(race)
+        saveRaces()
+    }
+    
+    private func saveRaces() {
+        do {
+            let data = try JSONEncoder().encode(races)
+            UserDefaults.standard.set(data, forKey: "races")
+        } catch {
+            print("Error saving races:", error)
+        }
+    }
+    
+    private func loadRaces() {
+        if let data = UserDefaults.standard.data(forKey: "races") {
+            do {
+                races = try JSONDecoder().decode([RaceData].self, from: data)
+            } catch {
+                print("Error loading races:", error)
+            }
+        }
     }
 }

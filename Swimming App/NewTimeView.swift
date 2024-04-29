@@ -8,12 +8,8 @@ struct NewTimeView: View {
     @State private var event = ""
     @State private var course = ""
     
-    let events = ["400/500 Free", "800/1000 Free", "1500/1650 Free",
-                  "50 Back", "100 Back", "200 Back",
-                  "50 Breast", "100 Breast", "200 Breast",
-                  "50 Fly", "100 Fly", "200 Fly",
-                  "200 IM", "400 IM"]
-    let courses = ["Short Course Yards", "Long Course Meters", "Short Course Meters"]
+    let events = ["Select...", "50 Free", "100 Free", "200 Free", "400/500 Free", "800/1000 Free", "1500/1650 Free", "50 Back", "100 Back", "200 Back", "50 Breast", "100 Breast", "200 Breast", "50 Fly", "100 Fly", "200 Fly", "200 IM", "400 IM"]
+    let courses = ["Select...", "Short Course Yards", "Long Course Meters", "Short Course Meters"]
     
     var body: some View {
         VStack {
@@ -61,6 +57,9 @@ struct NewTimeView: View {
     }
     
     func saveRace() {
+        print(time)
+        print(event)
+        print(course)
         let newRace = RaceData(date: date, time: time, event: event, course: course)
         raceManager.addRace(race: newRace)
     }
