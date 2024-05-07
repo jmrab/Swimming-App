@@ -3,27 +3,28 @@ import SwiftUI
 struct TimeStandardsView: View {
     var body: some View {
         NavigationView {
+            // Navigation List of time standards
             List {
                 NavigationLink(destination: SectionalsImage()) {
-                    Text("Sectionals")
+                    Text("OHSAA Sectionals")
                 }
                 NavigationLink(destination: DistrictsImage()) {
-                    Text("Districts")
+                    Text("OHSAA Districts")
                 }
                 NavigationLink(destination: StatesImage()) {
-                    Text("States")
+                    Text("OHSAA States")
                 }
                 NavigationLink(destination: FuturesImage()) {
-                    Text("Futures")
+                    Text("USA Futures")
                 }
                 NavigationLink(destination: JNATImage()) {
-                    Text("Junior Nationals")
+                    Text("USA Junior Nationals")
                 }
                 NavigationLink(destination: WinterJNATImage()) {
-                    Text("Winter Junior Nationals")
+                    Text("USA Winter Junior Nationals")
                 }
                 NavigationLink(destination: OlympicImage()) {
-                    Text("Olympic")
+                    Text("Olympic Trials")
                 }
             }
             .navigationTitle("Time Standards")

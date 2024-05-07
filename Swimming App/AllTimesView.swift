@@ -1,11 +1,14 @@
 import SwiftUI
 
 struct AllTimesView: View {
-    @ObservedObject var raceManager = RaceManager() 
+    // Create an observed object raceManager to manage race data
+    @ObservedObject var raceManager = RaceManager()
     
     var body: some View {
         NavigationView {
+            // Create a list to display race details
             List {
+                // Iterate through races in raceManager.races then display in VStack
                 ForEach(raceManager.races) { race in
                     VStack(alignment: .leading) {
                         Text("Date: \(race.date)")

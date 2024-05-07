@@ -1,13 +1,16 @@
 import SwiftUI
 
 struct SplashView: View {
+    // State property to track if the splash screen should transition
     @State var isActive: Bool = false
     
     var body: some View {
         VStack {
+            // If isActive is true, show the MainMenu
             if (self.isActive) {
                 MainMenu()
             } else {
+                // Show the loading screen
                 ZStack {
                     Image("loadingImg")
                         .scaleEffect(CGSize(width: 0.8, height: 0.9))
@@ -27,6 +30,7 @@ struct SplashView: View {
                         .offset(y: -170)
                         .shadow(color: .white, radius: 1, x: 1, y: 2)
                 }
+                // When the view appears, set isActive to true after a delay
                 .onAppear {
                     DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) {
                         withAnimation {
