@@ -15,6 +15,17 @@ struct AllTimesView: View {
                         Text("Time: \(race.time)")
                         Text("Event: \(race.event)")
                         Text("Course: \(race.course)")
+                        
+                        HStack {
+                            
+                            Button(action: {
+                                raceManager.deleteRace(race: race)
+                            }) {
+                                Text("Delete")
+                                    .foregroundColor(.red)
+                                    .padding(.horizontal)
+                            }
+                        }
                     }
                 }
             }

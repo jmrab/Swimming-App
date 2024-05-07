@@ -27,6 +27,12 @@ class RaceManager: ObservableObject {
         }
     }
     
+    // Delete a race from the races array and save races
+        func deleteRace(race: RaceData) {
+            races.removeAll(where: { $0.id == race.id })
+            saveRaces()
+        }
+    
     // Load races data from UserDefaults using JSON decoding
     private func loadRaces() {
         if let data = UserDefaults.standard.data(forKey: "races") {

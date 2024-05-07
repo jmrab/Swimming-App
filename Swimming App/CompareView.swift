@@ -5,3 +5,6 @@ struct CompareView: View {
         Text("Compare table or graph")
     }
 }
+
+
+// To code later?

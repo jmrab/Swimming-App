@@ -10,10 +10,10 @@ struct MainMenu: View {
                 }
                 NavigationLink(destination: AllTimesView()) {
                     Text("View All Times")
-                }
+                } /*
                 NavigationLink(destination: CompareView()) {
                     Text("Comparisons")
-                }
+                } */
                 NavigationLink(destination: TimeStandardsView()) {
                     Text("Time Standards")
                 }
