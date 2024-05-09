@@ -10,9 +10,11 @@ struct NewTimeView: View {
     @State private var event = ""
     @State private var course = ""
     
+    @State private var showCourseInfo = false
+    
     // Arrays for event and course selection
-    let events = ["Select...", "50 Free", "100 Free", "200 Free", "400/500 Free", "800/1000 Free", "1500/1650 Free", "50 Back", "100 Back", "200 Back", "50 Breast", "100 Breast", "200 Breast", "50 Fly", "100 Fly", "200 Fly", "200 IM", "400 IM"]
-    let courses = ["Select...", "Short Course Yards", "Long Course Meters", "Short Course Meters"]
+    let events = ["Event", "50 Free", "100 Free", "200 Free", "400/500 Free", "800/1000 Free", "1500/1650 Free", "50 Back", "100 Back", "200 Back", "50 Breast", "100 Breast", "200 Breast", "50 Fly", "100 Fly", "200 Fly", "200 IM", "400 IM"]
+    let courses = ["SCY", "LCM", "SCM"]
     
     var body: some View {
         VStack {
@@ -22,15 +24,13 @@ struct NewTimeView: View {
                 .padding(.top, 20)
             
             // Date picker for selecting the race date
-            DatePicker(
-                "Date",
-                selection: $date,
-                displayedComponents: [.date]
-            )
+            DatePicker("Date", selection: $date, displayedComponents: [.date])
+                .frame(width: 200)
             .padding()
             
             // Text field for entering the race time
             TextField("Enter Time", text: $time)
+                .frame(width: 200)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
                 .padding()
             
@@ -40,16 +40,34 @@ struct NewTimeView: View {
                     Text(eventName)
                 }
             }
+            .frame(width: 200)
+            .border(Color.blue)
             .pickerStyle(.menu)
             .padding()
             
-            // Picker for selecting the race course
-            Picker("Select a course", selection: $course) {
-                ForEach(courses, id: \.self) { courseName in
-                    Text(courseName)
+            HStack {
+                // Picker for selecting the race course
+                Picker("", selection: $course) {
+                    ForEach(courses, id: \.self) { courseName in
+                        Text(courseName)
+                    }
+                }
+                .frame(width: 200)
+                .padding(.leading, 40)
+                .pickerStyle(SegmentedPickerStyle())
+                
+                // Information button
+                Button(action: {
+                    showCourseInfo.toggle()
+                }) {
+                    Image(systemName: "info.circle")
+                        .foregroundColor(.blue)
+                }
+                .padding(.leading, 10)
+                .popover(isPresented: $showCourseInfo) {
+                    CoursePopup()
                 }
             }
-            .pickerStyle(.menu)
             .padding()
             
             // Button to save the entered race data
@@ -73,3 +91,35 @@ struct NewTimeView: View {
         raceManager.addRace(race: newRace)
     }
 }
+
+// Popup struct
+struct CoursePopup: View {
+    var body: some View {
+        VStack {
+            Text("Select the course of the race:")
+                .font(.headline)
+                .padding()
+            Text("SCY - Short course yards (25 yard pool)")
+                .frame(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                .padding()
+            Text("LCM - Long course meters (50 meter pool)")
+                .frame(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                .padding()
+            Text("SCM - Short course meters (25 meter pool)")
+                .frame(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                .padding()
+        }
+        .frame(width: 400, height: 300)
+        //.background(Color.gray)
+        .cornerRadius(10)
+        .shadow(radius: 5)
+    }
+}
+
+// Preview struct
+struct NewTimeView_Previews: PreviewProvider {
+    static var previews: some View {
+        NewTimeView()
+    }
+}
+
