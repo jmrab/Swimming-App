@@ -36,6 +36,7 @@ struct SectionalsImage: View {
     var body: some View {
         Image("sectionals")
             .resizable()
+            .aspectRatio(contentMode: .fit)
     }
 }
 
@@ -43,6 +44,7 @@ struct DistrictsImage: View {
     var body: some View {
         Image("districts")
             .resizable()
+            .aspectRatio(contentMode: .fit)
     }
 }
 
@@ -50,6 +52,7 @@ struct StatesImage: View {
     var body: some View {
         Image("state")
             .resizable()
+            .aspectRatio(contentMode: .fit)
     }
 }
 
@@ -57,6 +60,7 @@ struct FuturesImage: View {
     var body: some View {
         Image("futures")
             .resizable()
+            .aspectRatio(contentMode: .fit)
     }
 }
 
@@ -64,6 +68,7 @@ struct JNATImage: View {
     var body: some View {
         Image("jnat times")
             .resizable()
+            .aspectRatio(contentMode: .fit)
     }
 }
 
@@ -71,6 +76,7 @@ struct WinterJNATImage: View {
     var body: some View {
         Image("winter jn ats")
             .resizable()
+            .aspectRatio(contentMode: .fit)
     }
 }
 
@@ -78,5 +84,6 @@ struct OlympicImage: View {
     var body: some View {
         Image("trials times")
             .resizable()
+            .aspectRatio(contentMode: .fit)
     }
 }
