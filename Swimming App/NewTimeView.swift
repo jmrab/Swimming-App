@@ -9,7 +9,6 @@ struct NewTimeView: View {
     @State private var time: String = ""
     @State private var event = ""
     @State private var course = ""
-    
     @State private var showCourseInfo = false
     
     // Arrays for event and course selection
