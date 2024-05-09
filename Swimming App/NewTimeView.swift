@@ -10,7 +10,8 @@ struct NewTimeView: View {
     @State private var event = ""
     @State private var course = ""
     @State private var showCourseInfo = false
-    
+    @State private var showMainMenu = false // Added state for navigation
+
     // Arrays for event and course selection
     let events = ["Event", "50 Free", "100 Free", "200 Free", "400/500 Free", "800/1000 Free", "1500/1650 Free", "50 Back", "100 Back", "200 Back", "50 Breast", "100 Breast", "200 Breast", "50 Fly", "100 Fly", "200 Fly", "200 IM", "400 IM"]
     let courses = ["SCY", "LCM", "SCM"]
@@ -25,7 +26,7 @@ struct NewTimeView: View {
             // Date picker for selecting the race date
             DatePicker("Date", selection: $date, displayedComponents: [.date])
                 .frame(width: 200)
-            .padding()
+                .padding()
             
             // Text field for entering the race time
             TextField("Enter Time", text: $time)
@@ -69,15 +70,21 @@ struct NewTimeView: View {
             }
             .padding()
             
-            // Button to save the entered race data
-            Button(action: saveRace) {
-                Text("Save Race")
+            // Button to save the entered race data and go back to main menu
+            Button(action: {
+                saveRace()
+                showMainMenu = true // Navigate to main menu
+            }) {
+                Text("Save Race and Go Back to Main Menu")
                     .padding()
                     .foregroundColor(.white)
                     .background(Color.blue)
                     .cornerRadius(10)
             }
             .padding()
+            .sheet(isPresented: $showMainMenu) {
+                MainMenu()
+            }
         }
     }
     
@@ -99,17 +106,16 @@ struct CoursePopup: View {
                 .font(.headline)
                 .padding()
             Text("SCY - Short course yards (25 yard pool)")
-                .frame(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                .frame(alignment: .center)
                 .padding()
             Text("LCM - Long course meters (50 meter pool)")
-                .frame(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                .frame(alignment: .center)
                 .padding()
             Text("SCM - Short course meters (25 meter pool)")
-                .frame(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                .frame(alignment: .center)
                 .padding()
         }
         .frame(width: 400, height: 300)
-        //.background(Color.gray)
         .cornerRadius(10)
         .shadow(radius: 5)
     }
@@ -121,4 +127,3 @@ struct NewTimeView_Previews: PreviewProvider {
         NewTimeView()
     }
 }
-
