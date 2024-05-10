@@ -75,7 +75,7 @@ struct NewTimeView: View {
                 saveRace()
                 showMainMenu = true // Navigate to main menu
             }) {
-                Text("Save Race and Go Back to Main Menu")
+                Text("Save Race")
                     .padding()
                     .foregroundColor(.white)
                     .background(Color.blue)
