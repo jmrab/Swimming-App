@@ -25,12 +25,12 @@ struct NewTimeView: View {
             
             // Date picker for selecting the race date
             DatePicker("Date", selection: $date, displayedComponents: [.date])
-                .frame(width: 200)
+                .frame(width: 210)
                 .padding()
             
             // Text field for entering the race time
             TextField("Enter Time", text: $time)
-                .frame(width: 200)
+                .frame(width: 210)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
                 .padding()
             
@@ -40,7 +40,7 @@ struct NewTimeView: View {
                     Text(eventName)
                 }
             }
-            .frame(width: 200)
+            .frame(width: 210)
             .border(Color.blue)
             .pickerStyle(.menu)
             .padding()
@@ -101,23 +101,34 @@ struct NewTimeView: View {
 // Popup struct
 struct CoursePopup: View {
     var body: some View {
-        VStack {
-            Text("Select the course of the race:")
-                .font(.headline)
-                .padding()
-            Text("SCY - Short course yards (25 yard pool)")
-                .frame(alignment: .center)
-                .padding()
-            Text("LCM - Long course meters (50 meter pool)")
-                .frame(alignment: .center)
-                .padding()
-            Text("SCM - Short course meters (25 meter pool)")
-                .frame(alignment: .center)
-                .padding()
+        ZStack {
+            HStack {
+                Image(systemName: "control")
+                    .rotationEffect(.degrees(180))
+                    .position(x: 455, y: 30)
+            }
+            
+            VStack {
+                Text("Select the course of the race:")
+                    .font(.headline)
+                    .padding()
+                Text("SCY - Short course yards (25 yard pool)")
+                    .frame(alignment: .center)
+                    .font(.system(size: 18))
+                    .padding()
+                Text("LCM - Long course meters (50 meter pool)")
+                    .frame(alignment: .center)
+                    .font(.system(size: 18))
+                    .padding()
+                Text("SCM - Short course meters (25 meter pool)")
+                    .frame(alignment: .center)
+                    .font(.system(size: 18))
+                    .padding()
+            }
+            .frame(width: 900, height: 300)
+            .cornerRadius(10)
+            .shadow(radius: 5)
         }
-        .frame(width: 400, height: 300)
-        .cornerRadius(10)
-        .shadow(radius: 5)
     }
 }
 
